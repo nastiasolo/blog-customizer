@@ -23,7 +23,7 @@ export const ArrowButton = ({ isOpen, onClick }: ArrowButtonProps) => {
 			<img
 				src={arrow}
 				alt='иконка стрелочки'
-				className={clsx(styles.arrow, isOpen && styles.container_open)}
+				className={clsx(styles.arrow, isOpen && styles.arrow_open)}
 			/>
 		</div>
 	);

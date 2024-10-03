@@ -40,6 +40,7 @@ export const ArticleParamsForm = ({
 
 	const handleReset = () => {
 		setSelectArticleState(defaultArticleState);
+		setCurrentArticleState(defaultArticleState);
 	};
 
 	useOutsideClickClose({
