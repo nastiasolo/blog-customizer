@@ -8,7 +8,7 @@ export type OnClick = () => void;
 
 type ArrowButtonProps = {
 	isOpen: boolean;
-	onClick: OnClick;
+	onClick: (data: boolean) => void;
 };
 
 export const ArrowButton = ({ isOpen, onClick }: ArrowButtonProps) => {
@@ -18,12 +18,12 @@ export const ArrowButton = ({ isOpen, onClick }: ArrowButtonProps) => {
 			role='button'
 			aria-label='Открыть/Закрыть форму параметров статьи'
 			tabIndex={0}
-			className={clsx(styles.container, { [styles.container_open]: isOpen })}
-			onClick={onClick}>
+			className={clsx(styles.container, isOpen && styles.container_open)}
+			onClick={() => onClick(!isOpen)}>
 			<img
 				src={arrow}
 				alt='иконка стрелочки'
-				className={clsx(styles.arrow, { [styles.arrow_open]: isOpen })}
+				className={clsx(styles.arrow, isOpen && styles.arrow_open)}
 			/>
 		</div>
 	);
